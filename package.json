@@ -1,0 +1,16 @@
+{
+  "name": "questetra-addon-builder",
+  "version": "0.0.1",
+  "description": "Questetra Addon Builder",
+  "main": "index.js",
+  "author": "ehara@questetra.com",
+  "license": "ISC",
+  "bin": {
+    "qab": "./index.js"
+  },
+  "dependencies": {
+    "dateformat": "^3.0.3",
+    "sharp": "^0.25.3",
+    "xmlbuilder": "^15.1.1"
+  }
+}
