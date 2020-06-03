@@ -41,7 +41,10 @@ async function buildXml() {
     const root = builder.create('service-task-definition');
 
     root.ele('engine-type', ENGINE_TYPES[addon["engine-type"]]);
-    root.ele('last-modified', dateFormat(new Date(), 'yyyy-mm-dd'));
+    
+    if(addon["last-modified"]) {
+        root.ele('last-modified', dateFormat(new Date(), 'yyyy-mm-dd'));
+    }
 
     addMultilingualElement(addon, 'label', root);
     if(addon['summary']) {
