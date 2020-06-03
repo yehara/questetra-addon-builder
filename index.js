@@ -57,8 +57,8 @@ async function buildXml() {
             config.att('name', element.name);
             config.att('required', element.required ? "true" : "false");
             CONFIG_OPTIONAL_ATTRIBUTES.forEach(key => {
-                if (element.key) {
-                    config.add(key, element.key);
+                if (element[key]) {
+                    config.att(key, element[key]);
                 }
             });
             addMultilingualElement(element, 'label', config);
