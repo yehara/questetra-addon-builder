@@ -19,7 +19,7 @@ const CONFIG_OPTIONAL_ATTRIBUTES = [
 ];
 
 const basedir = process.env.PWD;
-const addon = require(basedir + '/addon.json');
+const addon = require(basedir + '/src/addon.json');
 
 main();
 
@@ -67,9 +67,10 @@ async function buildXml() {
 
     var script = fs.readFileSync(basedir + "/src/main.js", 'utf8');
     root.ele('script').cdata("\n" + script + "\n");
-
-    if(addon.icon) {
-        await loadIcon(basedir + "/src/" + addon.icon, root)
+    
+    var iconpath = basedir + "/src/icon.png";
+    if(fs.existsSync(iconpath)) {
+        await loadIcon(iconpath, root)
             .catch(err => {
                 console.log(err);
             });
