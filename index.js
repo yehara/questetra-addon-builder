@@ -8,7 +8,8 @@ const dateFormat = require('dateformat');
 const ENGINE_TYPES = {
     "RHINO": 0,
     "NASHORN": 1,
-    "GRAALJS": 2
+    "GRAALJS_NASHORN_COMPATIBLE": 2,
+    "GRAALJS": 3
 };
 const CONFIG_OPTIONAL_ATTRIBUTES = [
     "form-type",
