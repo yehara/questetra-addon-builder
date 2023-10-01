@@ -69,7 +69,9 @@ async function buildXml() {
         });
     }
 
-    var script = fs.readFileSync(basedir + "/src/main.js", 'utf8');
+    // 複数の JS ファイルを、config.source の順番で連結する
+    const source = addon.source || ['src/main.js'];
+    const script = source.map(path => fs.readFileSync(basedir + "/" + path, 'utf8')).join("\n");
     root.ele('script').cdata("\n" + script + "\n");
     
     var iconpath = basedir + "/src/icon.png";
