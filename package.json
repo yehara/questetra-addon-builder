@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "dateformat": "^3.0.3",
-    "sharp": "^0.30.5",
+    "sharp": "^0.32.6",
     "xmlbuilder": "^15.1.1"
   }
 }
